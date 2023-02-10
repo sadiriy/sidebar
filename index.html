@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Burger Button</title>
+	<style type="text/css">
+		.burger-btn{
+			display: flex;
+			flex-direction: column;
+			width: 40px;
+			margin-left: 39px;
+			margin-top: 18px;
+		}
+		.burger-btn > span{
+			height: 4px;
+			margin: 4px 0;
+			background: #4287f5;
+			border-radius: 10px;
+			transition: .4s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+		}
+		.burger-btn > span:nth-child(1){
+			width: 50%;
+		}
+		.burger-btn > span:nth-child(3){
+			width: 75%;
+		}
+		.active > span:nth-child(1){
+			transform: rotatez(45deg) translate(5px, 0px);
+    		transform-origin: bottom;
+		}
+		.active > span:nth-child(2){
+			transform: rotatez(-45deg);
+    		transform-origin: top;
+		}
+		.active > span:nth-child(3){
+			transform: translate(17px, -7px) rotatez(45deg);
+    		transform-origin: bottom;
+    		width: 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="burger-btn" id="burger-btn" onclick="MenuBtn()">
+		<span></span>
+		<span></span>
+		<span></span>
+	</div>
+
+	<script>
+		function MenuBtn(){
+			var btn = document.getElementById("burger-btn");
+			if (btn.classList.contains("active")) {
+		    	btn.classList.remove("active");
+		    }
+		    else{
+				btn.classList.add("active");
+		    }
+		}
+	</script>
+</body>
+</html>
